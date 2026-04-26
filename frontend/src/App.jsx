@@ -7,8 +7,6 @@ import SignIn from "./components/SignIn";
 import MapComponent from "./components/Map";
 
 function App() {
-  const [showSignIn, setShowSignIn] = useState(false);
-
   useEffect(() => {
     document.title = "EstateIntel - Smart Property Decisions";
     if (window.location.hash) {
@@ -16,14 +14,12 @@ function App() {
     }
   }, []);
 
-  if (showSignIn) {
-    return <SignIn onBack={() => setShowSignIn(false)} />;
-  }
-
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 scroll-smooth">
-      <Navigation onSignIn={() => setShowSignIn(true)} />
+      <Navigation />
       <Routes>
+        <Route path="/login" element={<SignIn />} />
+        <Route path="/signup" element={<SignIn />} />
         <Route 
           path="/" 
           element={
