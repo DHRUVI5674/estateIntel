@@ -1,8 +1,8 @@
 import React from 'react';
 import { Shield } from 'lucide-react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
-const Navigation = ({ onSignIn }) => {
+const Navigation = () => {
   const getLinkClasses = ({ isActive }) => 
     `hover:text-indigo-600 transition-colors cursor-pointer ${isActive ? 'text-indigo-600 font-bold' : ''}`;
 
@@ -28,15 +28,15 @@ const Navigation = ({ onSignIn }) => {
         </div>
 
       <div className="flex items-center gap-4">
-        <button 
-          onClick={onSignIn}
+        <Link 
+          to="/login"
           className="text-slate-600 font-semibold hover:text-indigo-600 transition-colors px-4 py-2"
         >
           Sign in
-        </button>
-        <button className="bg-indigo-600 text-white font-bold px-6 py-2.5 rounded-full hover:bg-indigo-700 hover:shadow-xl hover:shadow-indigo-100 transition-all active:scale-95">
+        </Link>
+        <Link to="/signup" className="bg-indigo-600 text-white font-bold px-6 py-2.5 rounded-full hover:bg-indigo-700 hover:shadow-xl hover:shadow-indigo-100 transition-all active:scale-95 inline-block">
           Get started
-        </button>
+        </Link>
       </div>
     </div>
   </nav>
