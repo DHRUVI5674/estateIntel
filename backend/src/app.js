@@ -18,6 +18,7 @@ app.use(express.json());
 // Routes
 app.use('/api/resources', require('./routes/resources.route'));
 app.use('/api/user', require('./routes/user.route'));
+app.use('/api/insights', require('./routes/insights.route'));
 
 // Health check
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
